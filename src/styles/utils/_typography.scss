@@ -1,0 +1,82 @@
+$weights: (
+  regular: 400,
+  medium: 500,
+  semibold: 600,
+  bold: 700,
+);
+
+$typography-sizes: (
+  display-2xl: (
+    font-size: 6.4rem,
+    line-height: 7.4rem,
+    letter-spacing: -0.02em,
+  ),
+  display-xl: (
+    font-size: 5.6rem,
+    line-height: 6.6rem,
+    letter-spacing: -0.02em,
+  ),
+  display-lg: (
+    font-size: 4.6rem,
+    line-height: 5.6rem,
+    letter-spacing: -0.02em,
+  ),
+  display-md: (
+    font-size: 4rem,
+    line-height: 5rem,
+    letter-spacing: -0.02em,
+  ),
+  display-sm: (
+    font-size: 3.6rem,
+    line-height: 4.6rem,
+    letter-spacing: -0.02em,
+  ),
+  display-xs: (
+    font-size: 2.8rem,
+    line-height: 3.8rem,
+    letter-spacing: -0.02em,
+  ),
+  display-2xs: (
+    font-size: 2.4rem,
+    line-height: 3.8rem,
+    letter-spacing: -0.02em,
+  ),
+  text-xl: (
+    font-size: 2rem,
+    line-height: 3rem,
+    letter-spacing: -0.02em,
+  ),
+  text-lg: (
+    font-size: 1.8rem,
+    line-height: 2.8rem,
+    letter-spacing: -0.02em,
+  ),
+  text-md: (
+    font-size: 1.6rem,
+    line-height: 2.6rem,
+    letter-spacing: -0.02em,
+  ),
+  text-sm: (
+    font-size: 1.4rem,
+    line-height: 2.2rem,
+    letter-spacing: -0.02em,
+  ),
+  text-xs: (
+    font-size: 1.2rem,
+    line-height: 2rem,
+    letter-spacing: -0.02em,
+  ),
+);
+
+@mixin text($typography, $weight: regular) {
+  $font-size: map-get($typography-sizes, $typography);
+  @if $font-size {
+    font-size: map-get($font-size, font-size);
+    line-height: map-get($font-size, line-height);
+    letter-spacing: map-get($font-size, letter-spacing);
+  }
+
+  @if map-has-key($weights, $weight) {
+    font-weight: map-get($weights, $weight);
+  }
+}

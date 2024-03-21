@@ -1,0 +1,10 @@
+.button-alert {
+  background-color: color(neutral, black);
+  color: color(gray, 100);
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  width: fit-content;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  @include text(text-lg);
+}

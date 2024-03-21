@@ -1,0 +1,39 @@
+// Colors
+$colors: (
+  neutral: (
+    black: #000,
+    white: #fefefe,
+  ),
+  gray: (
+    100: #f5f5f5,
+    200: #eeeeee,
+    300: #e0e0e0,
+    400: #bdbdbd,
+    500: #9e9e9e,
+    600: #757575,
+    700: #616161,
+    800: #424242,
+    900: #212121,
+  ),
+  background: (
+    primary: #031a21,
+  ),
+);
+
+@function color($hierarchy, $value) {
+  // Checks if the hierarchy exists in the color map
+  @if not map-has-key($colors, $hierarchy) {
+    @error "A hierarquia '#{$hierarchy}' não foi encontrada no mapa de cores.";
+  }
+
+  // Take the submap from the hierarchy
+  $color-map: map-get($colors, $hierarchy);
+
+  // Checks if the value exists in the selected hierarchy
+  @if not map-has-key($color-map, $value) {
+    @error "O valor '#{$value}' não foi encontrado na hierarquia '#{$hierarchy}'.";
+  }
+
+  // Returns the color
+  @return map-get($color-map, $value);
+}

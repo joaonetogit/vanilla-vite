@@ -1,0 +1,44 @@
+$screen-xs: 510px;
+$screen-sm: 768px;
+$screen-md: 1024px;
+$screen-lg: 1440px;
+
+$p-lg: 48px;
+$p-md: 32px;
+$p-sm: 24px;
+$p-xs: 16px;
+
+$breakpoints: (
+  xs: $screen-xs,
+  sm: $screen-sm,
+  md: $screen-md,
+  lg: $screen-lg,
+);
+
+@mixin breakpoint($screen) {
+  $breakpoint: map-get($breakpoints, $screen);
+  @media screen and (max-width: $breakpoint) {
+    @content;
+  }
+}
+
+.container {
+  width: 100%;
+  max-width: calc($screen-lg + 2 * $p-lg);
+  padding: 0 $p-lg;
+
+  @include breakpoint(md) {
+    max-width: calc($screen-md + 2 * $p-md);
+    padding: 0 $p-md;
+  }
+
+  @include breakpoint(sm) {
+    max-width: calc($screen-sm + 2 * $p-sm);
+    padding: 0 $p-sm;
+  }
+
+  @include breakpoint(xs) {
+    max-width: calc($screen-sm + 2 * $p-xs);
+    padding: 0 $p-xs;
+  }
+}

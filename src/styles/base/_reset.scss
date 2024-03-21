@@ -1,0 +1,74 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+
+  &:before,
+  &:after {
+    pointer-events: none;
+  }
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: color(gray, 900);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+:where(figure) {
+  margin: 0;
+}
+
+:where(table, th, td) {
+  border-collapse: collapse;
+}
+
+:where(img, picture, video, canvas) {
+  display: block;
+  max-width: 100%;
+}
+
+:where(img) {
+  height: auto;
+  -ms-interpolation-mode: bicubic;
+  vertical-align: middle;
+  background-repeat: no-repeat;
+  background-size: cover;
+  shape-margin: 0.75rem;
+  font-style: italic;
+}
+
+:where(input, button, textarea, select) {
+  font: inherit;
+  border: none;
+}
+
+:where(p, h1, h2, h3, h4, h5, h6) {
+  overflow-wrap: break-word;
+}
+
+:where(h1, h2, h3, h4, h5, h6) {
+  text-wrap: balance;
+}
+
+:where(ul, ol) {
+  list-style: none;
+}
+
+button {
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}

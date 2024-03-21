@@ -1,0 +1,6 @@
+.page-contact {
+  h1 {
+    @include text(display-lg);
+    color: color(gray, 900);
+  }
+}
